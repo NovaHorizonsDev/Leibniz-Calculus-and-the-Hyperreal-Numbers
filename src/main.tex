@@ -33,8 +33,8 @@ We are taught these ideas within near hours, days, or as much as months and yet 
 Through this way of thinking, we forget to look at the foundations that took countless years and even lifetimes to construct out of what we believe to be nothingness.
 What if I were to say everything mentioned in the first sentence was revolutionized by a German mathematician, philosopher, and logician's name is Gottfried Wilhelm Leibniz(\citauthor{Belaval}).
 The first part of this paper will focus on outlining his contributions to the foundations and invention of Calculus, disagreements between him and Newton regarding Calculus, Leibniz's notation for Calculus, and some of his other work in other areas such as law, metaphysics, and much more.
-The second part of this paper will focus on Abraham Robertson's construction of the Hyperreal Numbers and their applications proving that Leibniz's intuition of infinitesimals and Calculus correct.
-This paper will not cover personal aspects, including his personal life (birth, death, spouses, etc.) as that does not align with the goal of this paper.
+This paper will not cover personal details, including his personal life (birth, death, spouses, etc.) as that does not align with the goals of this paper.\par \\
+The second part focuses on Abraham Robertson's construction of the Hyperreal Numbers and their applications proving that Leibniz's intuition of infinitesimals and Calculus correct.
 Accurate recognition of one's work is critical in maintaining not only credibility over future pieces of work but also recognizing the accomplishments of one's work.
 Understanding Leibniz's work and the instrumental construction of Calculus and infinitesimals allows us to also focus on the foundations of our modern societies and trace where many of our common ideas and innovations stem from.
 Ultimately, by the end of this paper, one should have a better understanding of the impact Leibniz, infinitesimals, and the foundational understandings of Calculus.
@@ -102,7 +102,7 @@ Bernoulli originally proposed using a capital "$I$" to denote integration, but t
 This would prove to be an insightful suggestion as today many other symbols use Greek and Latin capital lettering and thus would diminish the impact and prevalence of the meaning of integration with a definition like "I". It can also be universally accepted without the knowledge of other languages or confusion with other languages and in programming.  
 The use of $dx$ at the end came as a symbol to denote which differential variable was being integrated on.
     
-    \section*{The Rivalry of Leibniz and Newton}
+    \chapter{The Rivalry of Leibniz and Newton}
 Between 1665 and 1666, Sir Issac Newton first laid out and made known in his work his methods on fluxions.
 Newton's ideas revolve around change regarding the passage of time.
 His published work known as "\textit{De Analysi}" included his work on these new methods.
@@ -123,7 +123,7 @@ Today, while both men should be recognized and receive equal credit in the inven
 \chapter{More Metaphysics, Law, and Philosophy}
     
 \section*{Sin and Evil}
-Leibniz on sin and evil stems from his idea mentioned earlier about our universe being the "most perfect" that God could have created.
+Leibniz on sin and evil stem from his idea mentioned earlier about our universe being the "most perfect" that God could have created.
 In that, Leibniz reflects on how since we are in the most perfect would sin must be a part of that most perfectness, according to the criteria placed on by God.
 Many argue that "wouldn't a world without evil and sin be the most perfect?", Leibniz touches on that by indicating that if those conditions could exist in such a possible non-contradictory world that we would then be in that by God's perfectness.
 Thus, to Leibniz, evil is a part of what he refers to as the most prefect world created.\\ \par
@@ -198,7 +198,7 @@ Let $x,y,z \in A$.
 The chain refers to the inclusion principle as our partial ordering scheme.
 $A_i \subset B$ ,then $A_1\subseteq A_2\subseteq A_3\subseteq\ldots$ is a chain.
 Our upper bound is then $\bigcup_{i=1}^{\infty}A_i$.
-With these criteria met there must exist some maximal element according to Zorn's Lemma.
+With these criteria met, there must exist some maximal element according to Zorn's Lemma.
 
 \chapter{Construction}
 We know that, $\R^2 $ symbolizes the ordered pair for $x, y \in \R: (x, y)$ and so on for $\R^n$ for $n \in \N$.
@@ -212,37 +212,122 @@ To solve these issues, we can construct an ultrafilter on the natural numbers.\p
 
 Using understanding of filters, we can construct filters on $\N$ containing subsets of the power set of $\N$.
 We then create a Fr\'echet filter ($\mathcal{F}$) on $\N$ such that any infinite subset of the power set is in $\mathcal{F}$ and not its complement (which would be finite).
-Adding in all subsets (we will denote as $B$) into a common superset ($J$) described as:\[J=\{B\ \in J\ |\ \mathcal{F}\ \subseteq B\ \ \}\].
-Now utilizing Zorn's Lemma, for all $B$ in $J$ we know that through the partially ordering through inclusion chain $B_1\subseteq B_2\subseteq B_3\subseteq\ldots\subseteq B_i\in J $ and its upper bound is then $\bigcup_{i=1}^{\infty}A_i$ then there is some maximal element which is our Ultrafilter on $\N$.
-
+Adding in all subsets (we will denote as $B$) into a common superset ($J$) described as:\[J=\{\forall B\ \in J\ |\ \mathcal{F}\ \subseteq B\ \ \}.\]
+Now utilizing Zorn's Lemma, for all $B$ in $J$ we know that through the partially ordering through an inclusion principle chain $B_1\subseteq B_2\subseteq B_3\subseteq\ldots\subseteq B_i\in J $ and its upper bound is then $\bigcup_{i=1}^{\infty}A_i$ then there is some maximal element which is our Ultrafilter ($\U$) on $\N$.
 Thus, we have $\R^{\mathfrak{U}} $.
 
 
 \chapter{ Describing the Hyperreals}
 We still have the issue that do we know if $(5,4,3,2,1,0,-1,\ldots)$ and $(\phi,3,\phi, 2,1,0,-1,\ldots)$ are different notations for the same value?
-Just as in the real numbers, we can create equivalence classes for these hyperreal numbers.
+Just as in the real numbers, we can create equivalence classes for these Hyperreal numbers.
 We define our equivalence classes such that (\citauthor{Goldbring}, 14 ):
 \[\mathrm{Let\ a,b\ \in \R^{\U}}.\ If\ (a)\ \sim_{\U}\ (b)\ then\ the\ set\ \ \{\ n\ \in \N|\ a_{n}\ =\ b_{n}\ \ \}\ \in \U \}\]
 In words, this relationship is defined as if the set of coordinates that are the same for $a$ and $b$ is in the Ultrafilter then $a$ and $b$ are equivalent.
 This makes sense as these sets would be infinite, and our ultrafilter contains infinite sets of natural numbers and thus infinite sets of similar coordinates.
 Note that all real numbers expressed as Hyperreal are infinite sequences of that real number.
-For example, the hyperreal representation of 3 is $(3,3,3,3,3, 3, \ldots)$ and $\pi$ is $(\pi, \pi, \pi,\pi, \pi, \pi, \ldots)$.
+For example, the Hyperreal representation of 3 is $(3,3,3,3,3, 3, \ldots)$ and $\pi$ is $(\pi, \pi, \pi,\pi, \pi, \pi, \ldots)$.
+\section*{Basic Ordering}
+Regarding ordering, we can say that given two distinct Hyperreal equivalence classes $  [[a]]_{\U}, [[b]]_{\U} \ \& \ [[a]]_{\U}\not= [[b]]_{\U} $ that: $ [[a]]_{\U}< [[b]]_{\U} \text{ if }\{a_n < b_n | n \in \N \} \in \U $ if the set of coordinates on $[[a]]_{\U}$ and $[[b]]_{\U}$ that $a_n < b_n$ with $n \in \N $ is in the ultrafilter.
+We know this by properties of real numbers.
+We know that for real numbers, ordering properties hold (full explanation is beyond the scope of this paper) and thus for each real number coordinate $a_n, b_n$, we can construct a set containing the coordinates of every instance where $a_n < b_n | n \in \N$.
+If the set is infite, then by our construction, the set is in the ultrafilter.
+Thus, we've established an ordering relationship between $[[a]]_{\U}$ and $[[b]]_{\U}$ and consequently on the Hyperreal numbers.
 
-Regarding ordering, we can say that given two distinct hyperreal equivalence classes $  [[a]]_{\U}, [[b]]_{\U}$  that: \[ [[a]]_{\U}< [[b]]_{\U} \text{ if }\{a_n < b_n | n \in \N \} \in \U \].
+\section*{Field}
+While we have basic ordering and equivalence classes for Hyperreal, we want to prove that they form a field.
+To do this, we will prove:
+\begin{enumerate}
+    \item They are a group under addition.
+    \item The non-zero equivalence classes form a group under multiplication.
+    \item The distributive property holds.
+    \item The negative of a Hyperreal is less than its positive.
+\end{enumerate}
+For the next sections we will define $x,y,z$ to be Hyperreal numbers such that: x =[[x]]_{\U}, y= [[y]]_{\U}, z=[[z]]_{\U}.
+\subsection*{Group Properties}
+We will start by proving that it is a group under addition.
+To prove that the Hyperreals are a group, we must prove that under the binary operation of addition that the Hyperreal are Closed, Associativity, the Identity exists, and the Inverses exist.
+Since the Hyperreal numbers are an extension of the real numbers, properties of the real numbers will assist us in proving these.
+\begin{enumerate}
+    \item[Closure:]Let $x$ and $y$ be in $\R^\U $.
+    Since each coordinate of $x$ and $y$ are real numbers, addition of $x$ and $y $ is the addition of each corresponding coordinate: $x+y$ = $(x_1 + y_1, x_2+y_2,\ldots)$.
+    Since the real numbers are closed under addition, each coordinate will be a real number, thus $x+y$ is in $\R^\U$.
+    \item[Associvity:]Since each coordinate of $x$,$y$ and $z$ are real numbers, associativity of $x$ and $y $ is the addition of each corresponding coordinate: $(x+y)+z = ((x_1 + y_1)+z_1, (x_2+y_2)+z_2,\ldots) =x+(y+z) = (x_1 + (y_1+z_1), x_2+(y_2+z_2),\ldots)$.
+    Thus $(x+y)+z= x+(y+z)$.
+    \item[Idenity:]We know for standard addition in the non-zero real numbers, the identity is $[[0]]_{\U}$.
+    The Hyperreal representation of $[[0]]$ is $(0, 0, 0,\ldots)$.
+    \item[Inverses:]There exist Hyperreal numbers $x, x'$ such that $x+x' = e $ where $e$ is our identity element.
+    We know our identity element to be $(0, 0, 0, \ldots)$.
+    Subtracting $x$ on each side, we get $x' = (0, 0, 0,\ldots) - x = -x or (-x_1, -x_2, -x_3,\ldots)$. We apply the same logic for $x' +x = e $ as we cannot assume communitivity.
+    This works out to be the same.
+\end{enumerate}
+Thus, The Hyperreal Numbers are a group under addition.
+\newline \par We will state just for it to be noted that since addition in the reals is also commutative so is true for hyper real numbers as well.
+This logic will fall over into multiplication as well.
+Going into multiplication for non-Zero Hyperreal numbers. \newline \par
 
 
+We will now prove that for the non-zero Hyperreals under multiplication are a group.
+\begin{enumerate}
+    \item[Closure:]Let $x$ and $y$ be in $\R^{\U}$.
+    Since each coordinate of $x$ and $y$ are real numbers, multiplication of $x$ and $y$ is the multiplication of each corresponding coordinate: $xy = (x_1 y_1, x_2 y_2,\ldots)$ .
+    Since the real numbers are closed under multiplication, each coordinate will be a real number thus $xy$ is in $\R^\U$.
+    \item[Associvity:] Since each coordinate of $x$,$y$ and $z$ are real numbers, associativity of $x$ and $y $ is the addition of each corresponding coordinate: $(xy)z = ((x_1 y_1)z_1, (x_2 y_2)z_2,\ldots) =x(yz) = (x_1  (y_1 z_1), x_2(y_2 z_2),\ldots)$.Thus $(xy)z= x(yz)$.
+    \item[Idenity:]We know for standard addition in the non-zero real numbers, the identity is $[[1]]_{\U}$.
+    The Hyperreal representation of $[[1]]$ is $(1, 1, 1,\ldots)$.
+    \item[Inverses:]There exist Hyperreal numbers $x, x'$ such that $xx' = e $ where $e$ is our identity element.
+    We know our identity element to be $(1, 1, 1, \ldots)$.
+    multiply $\frac{1}{x}$ on each side, we get $x' = \frac{(1, 1, 1,\ldots)}{x} = \frac{1}{x} or (\frac{1}{x_1}, \frac{1}{x_2}, \frac{1}{x_3},\ldots)$We then apply the same logic for $a^{-1} a =1$ as we cannot assume commutativity.
+    This turns out to be also true.
+    This then also means that for $\frac{1}{a_n}$ the set ${n \in \N| a_n not 0 } \in \U$.
+    Thus, our inverses exist.
+\end{enumerate}
+\subsection*{Connective Tissue Properties}
+Finally, for a field, we will prove the connectivity tissue under addition and multiplication holds for the Hyperreal numbers.
+\newline \par
+For the distributive property, since the hyperreal numbers are an extension of the real numbers, the distributive property holds the same in the Hyperreal as in the reals.
+We use the same idea that it holds for every real number coordinate that make up the Hyperreal.
+This translates to:\newline Since for every coordinate $x_n(y_n+z_n) = x_n y_n + x_n z_n$ then $x(y+z)= xy+xz$.\newline
 
 
+We next must prove high level ordering properties for the Hyperreal numbers. \newline
+We want to show that if $x<y$ and $z>0$ then $xz<yz$. \\
+Let $A$ be the set of coordinates of $a<b$ using the definition of ordering created in the section of the same name.
+Let $B$ be the set of coordinates of $c$ such that for every coordinate $z_n > 0$.
+Multiplying each side of $x<y$ by $z$ we get $xz<yz$.
+This relationship is equivalent to finding the intersection of A and B.
+We know by filter properties the intersection is $\U$.
+Thus, by basic ordering properties (see section on basic ordering principles above) $xz<yz$.
+This same logic will follow for showing that $x+z < y+z$.
+
+\newline \par
+Finally, we will prove that $-x <x $for non-zero Hyperreal numbers.
+Note that $x$ is positive.
+We know that the negative of a Hyperreal is represented by the infinite sequence of the negative of each coordinate: $-(x_1, x_2,x_3,\ldots) = (-x_1,- x_2,-x_3,\ldots)$ .
+We know that since each coordinate is a real number, properties of real numbers hold for each coordinate.
+We know that given a positive real numbers $r$, that $-r< r$ for all non-zero real numbers.
+Since for every real number coordinate $-x_n <x_n for n \in \N $ then by our definition of ordering, the set ${n \in \N| -x_n < x_n } \in \U$.
+Thus, $-x <x $.
+
+\\ \newline
+Thus, we have a non-standard field $\R^{\U}$.\\
+Q.E.D.
 
 
+\chapter*{Applications}
+We will now dive into two areas of application for Hyperreal numbers.
+Note that this is not teh only applicatiosn as Hyperreal numbers are one of the main concepts of non-standard analysis.
+\section*{Continuity}
+Using the Hyperreal, we can show continuity in a more streamlined manner than with standard analysis.
+Typically, one shows continuity by first showing that for every point in the domain that the limit between two points is below some small epsilon value and then one can say that those two points through a function are infinitely close.
+With the Hyperreal numbers, we can say that two Hyperreal numbers are infinitely close to each other (that is $|x-y|< \epsilon$) then through the function they continue to be infinitely close (that is |$f(x)-f(y)|<\varphi$) (\citauthor{Goldbring},25) thus showing continuity.
+We know as well that if a function is continuous, it is all differentiable (a derivative exists for the function).
+This idea is what Leibniz used to formulate his ideas about Calculus and differentials and touched upon in his Theory of Optimism.
 
-
-
-
-
-
-
-
+\section*{Complex Hyperreals}
+As with real numbers, there exists such number aptly named the ‘Hypercomplex numbers’ comprised of both a Hyperreal and complex aspect.
+If $ a,b$ are Hyperreal numbers ($[[a]]_{\U} \  \& \  [[b]]_{\U}$) then a Hypercomplex number would be in the form $a+bi$.
+The $bi $ component can also be represented as $(ib_1, ib_2,\ldots)$.
+The construction of such a system is beyond the scope of this exploration but still is possible.
 
 
 \chapter*{\underline{Conclusion}}
