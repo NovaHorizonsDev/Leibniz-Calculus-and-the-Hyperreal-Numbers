@@ -5,15 +5,19 @@
 \documentclass[12pt]{report}
 
 % Packages
-\usepackage{amsmath,geometry,setspace, enumerate,pdfpages}
-\usepackage{hyperref}
+\usepackage{amsmath,geometry,setspace, enumerate,pdfpages,mathrsfs,hyperref,csquotes}
 \usepackage[british]{babel}
-\usepackage{csquotes}
 \usepackage[round]{natbib}
+\usepackage{amsfonts}
+\usepackage{eufrak}
 \bibliographystyle{plainnat}
 \doublespacing
 \setlength\parindent{24pt}
-
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\U}{\mathfrak{U}}
 \begin{document}
 \includepdf[pages=1]{title}
     \newpage
@@ -142,14 +146,126 @@ What we take away from this is the notion of sparingly using capital punishment 
 \newpage
 \part{The Hyperreal Numbers}
 \newpage
-    \chapter*{\underline{Conclusion}}
+\chapter{Introduction to Construction}
+
+During his lifetime, mathematician Gottfried Leibniz conceptualized values that were infinitely small and/or infinitely great (referred to today as infinitesimal numbers). 
+This idea of infinitesimals and changes in such quantities led Leibniz to the conceptualization of the derivative and Integral in Calculus. 
+While challenged during his lifetime about the existence of such quantities by many including Issac Newton, ultimately with the help of Abraham Robinson in the 1960s putting together two of Leibniz's greatest ideas (the maximum filter and infinitesimal), his ideas were proven to not only exist but to be the basis of calculus for Integrals and differentials. 
+While Leibniz had expressed his ideas on a maximum filter though theological matters such a creationism and the perfect world hypothesis, Abraham Robinson utilized the philosophy of Leibniz's work to create the ultrafilter for the construction of what we know today as the Hyperreal number system (\citeauthor{Goldblatt}, 10-11). 
+The Hyperreal numbers are an extension of the Real numbers denoted as infinite sequences of real numbers. 
+This extension of the real number system allows many to comprehend continuity and differentiation more simple in calculus the same way as Leibniz thought about them roughly 300 years ago.
+Let's begin by going ver a few concepts that will be important to our construction.
+
+\section*{Filters}
+A filter is a collection of sets (denoted usually as $\mathbf{F}$) such that it meets the criteria that:
+Assuming A and B are non-empty sets:
+\begin{itemize}
+    \item $\emptyset \not\in \mathbf{F}$
+    \item $\text{If }  A \subseteq B \land A  \in \mathbf{F} ,\ \text{then} \ B \in \mathbf{F} $
+    \item $\text{If }  A \ \& \ B  \in \mathbf{F} ,\ \text{then}  \ A \cup B \in \mathbf{F} $
+\end{itemize}
+From this, we can create a superset of all the filters on some set known as the Fr\'echet filter (denoted as $\mathcal{F}$) or the cofinite filter.
+One criterion for the Fr\'echet filter is that.
+\begin{itemize}
+    \item $\text{If } A \in \mathcal{F}, \text{ then } A^c \text{ is finite.}$
+\end{itemize}
+This is important as we are looking to create infinite sequences, and as such, we want to include any filters that allow for the output of infinite sequences.\\
+We will also define the set $J$ with the criterion that:
+\begin{itemize}
+    \item $\forall B \in J, \mathcal{F} \subseteq B$
+\end{itemize}
+While right now this set J is not too important, it will come into play for our construction of the Ultrafilter for the Hyperreal numbers.
+
+
+\section*{UltraFilter}
+An ultrafilter ($\mathfrak{U}$ ) is a maximal filter which follows the criterion (along with previous criterions) that:
+\begin{itemize}
+    \item $\forall A \subseteq J , A \in $\mathfrak{U}$ \lor A^c \in $\mathfrak{U}$ $
+\end{itemize}
+This criterion follows Leibniz's metaphor using the perfect world.
+If we were to have both A and its complement, then any contradictions would exist alongside Leibniz's analogy of perfectness, thus leading to imperfections.
+This can lead to sets in the same matter that it will prevent a sufficient maximal element from being achieved.
+This leads into the construction of amn ultrapower through Zorn's Lemma.
+\subsection*{Zorn's Lemma}
+Zorn's Lemma states that all partially ordered sets in a chain that contain an upper bound contain a maximal element.
+Partially ordered regarding sets comes down to meeting three criteria:\\
+Let $x,y,z \in A$.
+\begin{itemize}
+    \item Reflexive: If $x \in A$, then $x\leq x$.
+    \item Anti-Symmetry If $x,y \in A$, $x\leq$ and $y\leqx$, then $x=y$.
+    \item Transitive: If $x \leq y$, and $y \leq z$, then $x \leq z$.
+\end{itemize}
+The chain refers to the inclusion principle as our partial ordering scheme.
+$A_i \subset B$ ,then $A_1\subseteq A_2\subseteq A_3\subseteq\ldots$ is a chain.
+Our upper bound is then $\bigcup_{i=1}^{\infty}A_i$.
+With these criteria met there must exist some maximal element according to Zorn's Lemma.
+
+\chapter{Construction}
+We know that, $\R^2 $ symbolizes the ordered pair for $x, y \in \R: (x, y)$ and so on for $\R^n$ for $n \in \N$.
+What if we raise the set of natural numbers ($\N$) to$ \R$ such as $\R^{\N}$.
+This would result in an N-tuple or an infinite sequence of real numbers.
+This does, however, raise a few issues.
+One issue is that one sequence could be $(5,4,3,2,1,0,-1,\ldots)$ and another be $(\phi,3,\phi, 2,1,0,-1,\ldots)$ are these different notations for the same value?
+Another issue is that we do not know if we have everything we can.
+Could we saturate more values within this system?
+To solve these issues, we can construct an ultrafilter on the natural numbers.\par
+
+Using understanding of filters, we can construct filters on $\N$ containing subsets of the power set of $\N$.
+We then create a Fr\'echet filter ($\mathcal{F}$) on $\N$ such that any infinite subset of the power set is in $\mathcal{F}$ and not its complement (which would be finite).
+Adding in all subsets (we will denote as $B$) into a common superset ($J$) described as:\[J=\{B\ \in J\ |\ \mathcal{F}\ \subseteq B\ \ \}\].
+Now utilizing Zorn's Lemma, for all $B$ in $J$ we know that through the partially ordering through inclusion chain $B_1\subseteq B_2\subseteq B_3\subseteq\ldots\subseteq B_i\in J $ and its upper bound is then $\bigcup_{i=1}^{\infty}A_i$ then there is some maximal element which is our Ultrafilter on $\N$.
+
+Thus, we have $\R^{\mathfrak{U}} $.
+
+
+\chapter{ Describing the Hyperreals}
+We still have the issue that do we know if $(5,4,3,2,1,0,-1,\ldots)$ and $(\phi,3,\phi, 2,1,0,-1,\ldots)$ are different notations for the same value?
+Just as in the real numbers, we can create equivalence classes for these hyperreal numbers.
+We define our equivalence classes such that (\citauthor{Goldbring}, 14 ):
+\[\mathrm{Let\ a,b\ \in \R^{\U}}.\ If\ (a)\ \sim_{\U}\ (b)\ then\ the\ set\ \ \{\ n\ \in \N|\ a_{n}\ =\ b_{n}\ \ \}\ \in \U \}\]
+In words, this relationship is defined as if the set of coordinates that are the same for $a$ and $b$ is in the Ultrafilter then $a$ and $b$ are equivalent.
+This makes sense as these sets would be infinite, and our ultrafilter contains infinite sets of natural numbers and thus infinite sets of similar coordinates.
+Note that all real numbers expressed as Hyperreal are infinite sequences of that real number.
+For example, the hyperreal representation of 3 is $(3,3,3,3,3, 3, \ldots)$ and $\pi$ is $(\pi, \pi, \pi,\pi, \pi, \pi, \ldots)$.
+
+Regarding ordering, we can say that given two distinct hyperreal equivalence classes $  [[a]]_{\U}, [[b]]_{\U}$  that: \[ [[a]]_{\U}< [[b]]_{\U} \text{ if }\{a_n < b_n | n \in \N \} \in \U \].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter*{\underline{Conclusion}}
 Gottfried Wilhelm Leibniz was a logician, philosopher, and innovator that ultimately changed the way we interact and think about various topics such as how we perceive changes in rates and infinitesimals to law and ethics, to even Theology.
-While some of his views (mainly calculus) came at time in parallel with others who lay to claim on the matter and at the time used their influence to outweigh Leibniz, today we realize the true impact Leibniz had on our world.\par
-In future research into Leibniz, I would much like to investigate more of his work as a philosopher.
+While some of his views (mainly calculus) came at time in parallel with others who lay to claim on the matter and at the time used their influence to outweigh Leibniz, today we realize the true impact Leibniz had on our world.
+I have also gained both a better understanding of calculus and constructions of number systems through abstract thinking.
+The application of philosophy onto mathematics through this research has shown to me the abstract thinking aspects of developing new mathematically sound theorems and proofs.
+I now also have a better understanding of how calculus works and who we do what we do in calculus.
+From differentials and infinitesimals to integration and the hyperfinite numbers (a subset of the hyperreal numbers as the Natural numbers are to the reals).
+\par
+
+
+In future with regard to research into Leibniz, I would much like to investigate more of his work as a philosopher.
 His works regarding Law and Ethics stick out to me the most as his ideas on Metaphysics and Theology establish criteria and reason on how to pass judgment and complex structures of human ethics. \par
 Leibniz's impact on today rivals many others in history as his research expanded into numerous disciplines and even created bridges between such disciplines such as mathematics, metaphysics, and theology.
-His ingenuity has affected billions of people over the course of multiple generations, and to this day we utilize many of his ideas such as calculus, ethics around capital punishment, and intuitions and understanding of theology.
+His ingenuity has affected billions of people over the course of multiple generations, and to this day we utilize many of his ideas such as calculus, ethics around capital punishment, and intuitions and understanding of theology.\par \\
 
-    \newpage
+With regard to the infinitesimals and hyprreal numbers, I would like to mainly take this research in two directions.
+First, I would like to research new ways to apply hyperreal numbers into mathematics.
+Specifically, sociology and human sciences as those areas interest me most.
+Secondly, I would want to continue into non-standard analysis and research this area of mathematics more in-depth.
+While the hyperreal numbers were just an introduction, I would like to delve deeper into topics including probability theory, applied mathematics (with infinitesimals), and differential equations.
+Overall, my understanding of mathematics, historical mathematics, Leibniz and complex structures has grown throughout my research.
+\newpage
     \bibliography{resources}
 \end{document}
