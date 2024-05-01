@@ -161,7 +161,7 @@ What we take away from this is the notion of sparingly using capital punishment 
 \newpage
 \chapter{Introduction to Construction}
 
-During his lifetime, mathematician Gottfried Leibniz conceptualized values that were infinitely small and/or infinitely great (referred today as infinitesimal numbers).
+During his lifetime, mathematician Gottfried Leibniz conceptualized values that were infinitely small and/or infinitely great (referred to today as infinitesimal numbers).
 This idea of infinitesimals and changes in such quantities led Leibniz to the conceptualization of the derivative and Integral in Calculus. 
 While challenged during his lifetime about the existence of such quantities by many including Issac Newton, ultimately with the help of Abraham Robinson in the 1960s putting together two of Leibniz's greatest ideas (the maximum filter and infinitesimal), his ideas were proven to not only exist but to be the basis of calculus for Integrals and differentials. 
 While Leibniz had expressed his ideas on a maximum filter though theological matters such as creationism and his Theory of Optimism(Perfect World), Abraham Robinson utilized the philosophy of Leibniz's work to create the ultrafilter for the construction of what we know today as the Hyperreal number system (\citeauthor{Goldblatt}, 10-11).
@@ -246,7 +246,7 @@ Note that all real numbers expressed as Hyperreal are infinite sequences of that
 For example, the Hyperreal representation of 3 is $(3,3,3,3,3, 3, \ldots)$ and $\pi$ is $(\pi, \pi, \pi,\pi, \pi, \pi, \ldots)$.
 \section*{Basic Ordering}
 \addcontentsline{toc}{section}{Basic Ordering}
-Regarding ordering, we can say that given two distinct Hyperreal equivalence classes \[  [[a]]_{\U}, [[b]]_{\U} \ \& \ [[a]]_{\U}\not= [[b]]_{\U} \] that: \[ [[a]]_{\U}< [[b]]_{\U} \text{ if }\{a_n < b_n | n \in \N \} \in \U \]. In words this means that the set of coordinates on $[[a]]_{\U}$ and $[[b]]_{\U}$ that $a_n < b_n$ with $n \in \N $ is in the ultrafilter.
+Regarding ordering, we can say that given two distinct Hyperreal equivalence classes \[  [[a]]_{\U}, [[b]]_{\U} \ \& \ [[a]]_{\U}\not= [[b]]_{\U} \] that: \[ [[a]]_{\U}< [[b]]_{\U} \text{ if }\{a_n < b_n | n \in \N \} \in \U .\] In words this means that the set of coordinates on $[[a]]_{\U}$ and $[[b]]_{\U}$ that $a_n < b_n$ with $n \in \N $ is in the ultrafilter.
 We know this by properties of real numbers and our construction.
 We know that for real numbers, ordering properties hold (full explanation is beyond the scope of this paper) and thus for each real number coordinate $a_n, b_n$, we can construct a set containing the coordinates of every instance where $a_n < b_n | n \in \N$.
 If the set is infite, then by our construction, the set is in the ultrafilter.
@@ -271,9 +271,15 @@ To prove that the Hyperreals are a group, we must prove that under the binary op
 Since the Hyperreal numbers are an extension of the real numbers, properties of the real numbers will assist us in proving these.
 \begin{enumerate}
     \item[Closure:]Let $x$ and $y$ be in $\R^\U $.
-    Since each coordinate of $x$ and $y$ are real numbers, addition of $x$ and $y $ is the addition of each corresponding coordinate: $x+y$ = $(x_1 + y_1, x_2+y_2,\ldots)$.
+    Since each coordinate of $x$ and $y$ are real numbers, addition of $x$ and $y $ is the addition of each corresponding coordinate: \[x+y= (x_1 + y_1, x_2+y_2,\ldots).\]
     Since the real numbers are closed under addition, each coordinate will be a real number, thus $x+y$ is in $\R^\U$.
-    \item[Associvity:]Since each coordinate of $x$,$y$ and $z$ are real numbers, associativity of $x$ and $y $ is the addition of each corresponding coordinate: \[(x+y)+z = ((x_1 + y_1)+z_1, (x_2+y_2)+z_2,\ldots) =x+(y+z) = (x_1 + (y_1+z_1), x_2+(y_2+z_2),\ldots).\]
+    \item[Associvity:]Since each coordinate of $x$,$y$ and $z$ are real numbers, associativity of $x$ and $y $ is the addition of each corresponding coordinate:
+    \begin{align*}
+    (x+y)+z &= ((x_1 + y_1)+z_1, (x_2+y_2)+z_2,\ldots)\\
+    &= ((x_1 + y_1)+z_1, (x_2+y_2)+z_2),\ldots).\\
+    &= (x_1 + (y_1+z_1), x_2+(y_2+z_2),\ldots).\\
+    &=x+(y+z).
+    \end{align*}
     Thus, $(x+y)+z= x+(y+z)$.
     \item[Idenity:]We know for standard addition in the non-zero real numbers, the identity is $[[0]]_{\U}$.
     The Hyperreal representation of $[[0]]$ is $(0, 0, 0,\ldots)$.
@@ -285,7 +291,8 @@ Since the Hyperreal numbers are an extension of the real numbers, properties of 
 Thus, The Hyperreal Numbers are a group under addition.
 \newline \par We will state just for it to be noted that since addition in the reals is also commutative, so is true for Hyperreal numbers as well.
 This logic will fall over into multiplication as well.
-Going into multiplication for non-Zero Hyperreal numbers. \newline \par
+
+\newline Going into multiplication for non-Zero Hyperreal numbers. \newline \par
 
 
 We will now prove that for the non-zero Hyperreals under multiplication are a group.
@@ -293,14 +300,20 @@ We will now prove that for the non-zero Hyperreals under multiplication are a gr
     \item[Closure:]Let $x$ and $y$ be in $\R^{\U}$.
     Since each coordinate of $x$ and $y$ are real numbers, multiplication of $x$ and $y$ is the multiplication of each corresponding coordinate: $xy = (x_1 y_1, x_2 y_2,\ldots)$.
     Since the real numbers are closed under multiplication, each coordinate will be a real number thus $xy$ is in $\R^\U$.
-    \item[Associvity:] Since each coordinate of $x$,$y$ and $z$ are real numbers, associativity of $x$ and $y $ is the addition of each corresponding coordinate: \[(xy)z = ((x_1 y_1)z_1, (x_2 y_2)z_2,\ldots) =x(yz) = (x_1  (y_1 z_1), x_2(y_2 z_2),\ldots).\]Thus $(xy)z= x(yz)$.
+    \item[Associvity:] Since each coordinate of $x$,$y$ and $z$ are real numbers, associativity of $x$ and $y $ is the addition of each corresponding coordinate:
+    \begin{align*}
+    (xy)z &= ((x_1 y_1)z_1, (x_2 y_2)z_2,\ldots) \\
+    &= (x_1  (y_1 z_1), x_2(y_2 z_2),\ldots)\\
+        &=x(yz).
+    \end{align*}
+    Thus $(xy)z= x(yz)$.
     \item[Idenity:]We know for standard addition in the non-zero real numbers, the identity is $[[1]]_{\U}$.
     The Hyperreal representation of $[[1]]$ is $(1, 1, 1,\ldots)$.
     \item[Inverses:]There exist Hyperreal numbers $x, x'$ such that $xx' = e $ where $e$ is our identity element.
     We know our identity element to be $(1, 1, 1, \ldots)$.
-    multiply $\frac{1}{x}$ on each side, we get \[x' = \frac{(1, 1, 1,\ldots)}{x} = \frac{1}{x} or (\frac{1}{x_1}, \frac{1}{x_2}, \frac{1}{x_3},\ldots).\] We then apply the same logic for $a^{-1} a =1$ as we cannot assume commutativity.
+    multiply $\frac{1}{x}$ on each side, we get \[x' = \frac{(1, 1, 1,\ldots)}{x} = \frac{1}{x} \text{ or } (\frac{1}{x_1}, \frac{1}{x_2}, \frac{1}{x_3},\ldots).\] We then apply the same logic for $a^{-1} a =1$ as we cannot assume commutativity.
     This turns out to be also true.
-    This then also means that for $\frac{1}{a_n}$ the set ${n \in \N| a_n not 0 } \in \U$.
+    This then also means that for $\frac{1}{a_n}$ the set $\{n \in \N| a_n \not= 0 \} \in \U$.
     Thus, our inverses exist.
 \end{enumerate}
 \subsection*{Connective Tissue Properties}
@@ -323,12 +336,12 @@ Thus, by basic ordering properties (see section on basic ordering principles abo
 This same logic will follow for showing that $x+z < y+z$.
 
 \newline \par
-Finally, we will prove that $-x <x $for non-zero Hyperreal numbers.
-Note that $x$ is positive.
-We know that the negative of a Hyperreal is represented by the infinite sequence of the negative of each coordinate: \[-(x_1, x_2,x_3,\ldots) = (-x_1,- x_2,-x_3,\ldots)\] .
+Finally, we will prove that $-x <x $ for non-zero Hyperreal numbers.
+Note that $x$ is positive: $x > 0$.
+We know that the negative of a Hyperreal is represented by the infinite sequence of the negative of each coordinate: \[-(x_1, x_2,x_3,\ldots) = (-x_1,- x_2,-x_3,\ldots).\]
 We know that since each coordinate is a real number, properties of real numbers hold for each coordinate.
 We know that given a positive real numbers $r$ that $-r< r$ for all non-zero real numbers.
-Since for every real number coordinate $-x_n <x_n for n \in \N $ then by our definition of ordering, the set $\{n \in \N| -x_n < x_n \} \in \U$.
+Since for every real number coordinate \[-x_n <x_n \text{ for } n \in \N \] then by our definition of ordering, the set $\{n \in \N| -x_n < x_n \} \in \U$.
 Thus, $-x <x $.
 
 \\ \newline
